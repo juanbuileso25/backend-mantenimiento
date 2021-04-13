@@ -3,11 +3,13 @@ const ROUTER = EXPRESS.Router();
 const CONTROLLER = require('./controller');
 
 ROUTER.route('/')
-.get(CONTROLLER.getInspections)
-.post(CONTROLLER.createInspection) 
+    .get(CONTROLLER.getInspections)
+    .post(CONTROLLER.createInspection)
 
 ROUTER.route('/:id')
-.delete(CONTROLLER.deleteInspection)
+    .get(CONTROLLER.getInspection)
+    .put(CONTROLLER.updateInspection)
+    .delete(CONTROLLER.deleteInspection)
 
 
 

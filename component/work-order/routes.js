@@ -3,7 +3,7 @@ const ROUTER = EXPRESS.Router();
 const CONTROLLER = require('./controller');
 
 ROUTER.route('/')
-.get(CONTROLLER.getMachines)
+    .post(CONTROLLER.createWorkOrder)
 
 
 module.exports = ROUTER;
