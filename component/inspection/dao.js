@@ -3,9 +3,9 @@ const CONN = CONNECTION();
 
 module.exports = {
 
-    createInspection({ id_machine, type_inspection, date_i, observation, employee, maintenance, state }) {
+    createInspection({ id_machine, type_inspection, date_i, observation_i, employee, maintenance, state }) {
         return new Promise((resolve, reject) => {
-            CONN.promise().query(' CALL create_inspection(?, ?, ?, ?, ?, ?, ?)', [id_machine, type_inspection, date_i, observation, employee, maintenance, state])
+            CONN.promise().query(' CALL create_inspection(?, ?, ?, ?, ?, ?, ?)', [id_machine, type_inspection, date_i, observation_i, employee, maintenance, state])
                 .then(([rows]) => {
                     return resolve({
                         success: true,
@@ -69,9 +69,9 @@ module.exports = {
                 })
         })
     },
-    updateInspection({ id_inspection, id_machine, type_inspection, date_i, time_i, observation, employee, maintenance, state }) {
+    updateInspection({ id_inspection, id_machine, type_inspection, date_i, time_i, observation_i, employee, maintenance, state }) {
         return new Promise((resolve, reject) => {
-            CONN.promise().query('CALL update_inspection(?,?,?,?,?,?,?,?,?)', [id_inspection, id_machine, type_inspection, date_i, time_i, observation, employee, maintenance, state])
+            CONN.promise().query('CALL update_inspection(?,?,?,?,?,?,?,?,?)', [id_inspection, id_machine, type_inspection, date_i, time_i, observation_i, employee, maintenance, state])
                 .then(([row]) => {
                     return resolve({
                         success: true,

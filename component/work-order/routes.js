@@ -6,4 +6,7 @@ ROUTER.route('/')
     .post(CONTROLLER.createWorkOrder)
 
 
+ROUTER.route('/:id')
+    .get(CONTROLLER.getWorkOrder)
+
 module.exports = ROUTER;

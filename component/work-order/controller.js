@@ -7,14 +7,23 @@ module.exports = {
         let zone = req.body.zone;
         let employee = req.body.employee;
         let type_maintenance = req.body.type_maintenance;
-        let observation = req.body.observation;
+        let observation_wo = req.body.observation_wo;
         let activity = req.body.activity;
         let estimated_time = req.body.estimated_time;
-        let state = req.body.state;
 
         try {
-            const WORKORDER = await MODEL.createInspection({ id_inspection, date_wo, zone, employee, type_maintenance, observation, activity, estimated_time, state })
+            const WORKORDER = await MODEL.createInspection({ id_inspection, date_wo, zone, employee, type_maintenance, observation_wo, activity, estimated_time })
             res.send(WORKORDER)
+        } catch (error) {
+            res.send(error)
+        }
+    },
+    async getWorkOrder(req, res) {
+        let id = req.params.id;
+
+        try {
+            const WORK_ORDER = await MODEL.getWorkOrder({ id })
+            res.send(WORK_ORDER)
         } catch (error) {
             res.send(error)
         }

@@ -5,13 +5,13 @@ module.exports = {
         let id_machine = req.body.id_machine;
         let type_inspection = req.body.type_inspection;
         let date_i = req.body.date_i;
-        let observation = req.body.observation;
+        let observation_i = req.body.observation_i;
         let employee = req.body.employee;
         let maintenance = req.body.maintenance;
         let state = req.body.state;
 
         try {
-            const INSPECTION = await MODEL.createInspection({ id_machine, type_inspection, date_i, observation, employee, maintenance, state });
+            const INSPECTION = await MODEL.createInspection({ id_machine, type_inspection, date_i, observation_i, employee, maintenance, state });
             res.send(INSPECTION);
             console.log(state);
         } catch (error) {
@@ -51,13 +51,13 @@ module.exports = {
         let type_inspection = req.body.type_inspection;
         let date_i = req.body.date_i;
         let time_i = req.body.time_i;
-        let observation = req.body.observation;
+        let observation_i = req.body.observation_i;
         let employee = req.body.employee;
         let maintenance = req.body.maintenance;
         let state = req.body.state;
 
         try {
-            const INSPECTION = await MODEL.updateInspection({ id_inspection, id_machine, type_inspection, date_i, time_i, observation, employee, maintenance, state });
+            const INSPECTION = await MODEL.updateInspection({ id_inspection, id_machine, type_inspection, date_i, time_i, observation_i, employee, maintenance, state });
             res.send(INSPECTION);
         } catch (error) {
             console.log(error);

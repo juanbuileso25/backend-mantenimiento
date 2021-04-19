@@ -1,9 +1,9 @@
 const DAO = require('./dao');
 
 module.exports = {
-    async createInspection({ id_machine, type_inspection, date_i, observation, employee, maintenance, state }) {
+    async createInspection({ id_machine, type_inspection, date_i, observation_i, employee, maintenance, state }) {
         try {
-            return await DAO.createInspection({ id_machine, type_inspection, date_i, observation, employee, maintenance, state })
+            return await DAO.createInspection({ id_machine, type_inspection, date_i, observation_i, employee, maintenance, state })
         } catch (error) {
             return error;
         }
@@ -29,9 +29,9 @@ module.exports = {
             return error;
         }
     },
-    async updateInspection({ id_inspection, id_machine, type_inspection, date_i, time_i, observation, employee, maintenance, state }) {
+    async updateInspection({ id_inspection, id_machine, type_inspection, date_i, time_i, observation_i, employee, maintenance, state }) {
         try {
-            return await DAO.updateInspection({ id_inspection, id_machine, type_inspection, date_i, time_i, observation, employee, maintenance, state });
+            return await DAO.updateInspection({ id_inspection, id_machine, type_inspection, date_i, time_i, observation_i, employee, maintenance, state });
         } catch (error) {
             return error;
         }
