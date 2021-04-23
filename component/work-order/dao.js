@@ -36,5 +36,22 @@ module.exports = {
                     })
                 })
         })
+    },
+    deleteWorkOrder({ id }) {
+        return new Promise((resolve, reject) => {
+            CONN.promise().query('CALL delete_work_order(?)', [id])
+                .then(([row]) => {
+                    return resolve({
+                        success: true,
+                        value: row
+                    })
+                })
+                .catch(error => {
+                    return reject({
+                        success: false,
+                        value: error
+                    })
+                })
+        })
     }
 }

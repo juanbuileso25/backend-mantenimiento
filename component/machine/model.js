@@ -1,9 +1,9 @@
 const DAO = require('./dao');
 
 module.exports = {
-    async getMachines(){
+    async getMachines() {
         try {
-           return await DAO.getMachines();
+            return await DAO.getMachines();
         } catch (error) {
             return error;
         }

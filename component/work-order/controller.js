@@ -27,5 +27,15 @@ module.exports = {
         } catch (error) {
             res.send(error)
         }
+    },
+    async deleteWorkOrder(req, res) {
+        let id = req.params.id;
+
+        try {
+            const WORK_ORDER = await MODEL.deleteWorkOrder({ id })
+            res.send(WORK_ORDER)
+        } catch (error) {
+            res.send(error)
+        }
     }
 }

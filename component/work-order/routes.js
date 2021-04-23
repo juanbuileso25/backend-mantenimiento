@@ -8,5 +8,6 @@ ROUTER.route('/')
 
 ROUTER.route('/:id')
     .get(CONTROLLER.getWorkOrder)
+    .delete(CONTROLLER.deleteWorkOrder)
 
 module.exports = ROUTER;

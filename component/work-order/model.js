@@ -15,5 +15,12 @@ module.exports = {
         } catch (error) {
             return error
         }
+    },
+    async deleteWorkOrder({ id }) {
+        try {
+            return await DAO.deleteWorkOrder({ id })
+        } catch (error) {
+            return error
+        }
     }
 }
