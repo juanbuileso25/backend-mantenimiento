@@ -37,6 +37,23 @@ module.exports = {
                 })
         })
     },
+    updateWorkOrder({ id_work_order, id_inspection, date_wo, time_wo, zone, employee, type_maintenance, observation_wo, activity, estimated_time, real_time, date_complete, date_revision, date_aprobbal, state }) {
+        return new Promise((resolve, reject) => {
+            CONN.promise().query('CALL update_work_order(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', [id_work_order, id_inspection, date_wo, time_wo, zone, employee, type_maintenance, observation_wo, activity, estimated_time, real_time, date_complete, date_revision, date_aprobbal, state])
+                .then(([row]) => {
+                    return resolve({
+                        success: true,
+                        value: row
+                    })
+                })
+                .catch(error => {
+                    return reject({
+                        success: false,
+                        value: error
+                    })
+                })
+        })
+    },
     deleteWorkOrder({ id }) {
         return new Promise((resolve, reject) => {
             CONN.promise().query('CALL delete_work_order(?)', [id])
