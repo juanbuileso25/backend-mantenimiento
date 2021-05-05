@@ -35,5 +35,12 @@ module.exports = {
         } catch (error) {
             return error;
         }
+    },
+    async updateStateInspection({ id_inspection }) {
+        try {
+            return await DAO.updateStateInspection({ id_inspection });
+        } catch (error) {
+            return error;
+        }
     }
 }

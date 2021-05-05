@@ -60,7 +60,17 @@ module.exports = {
             const INSPECTION = await MODEL.updateInspection({ id_inspection, id_machine, type_inspection, date_i, time_i, observation_i, employee, maintenance, state });
             res.send(INSPECTION);
         } catch (error) {
-            console.log(error);
+            res.send(error);
+        }
+    },
+    async updateStateInspection(req, res) {
+        let id_inspection = req.params.id;
+
+        try {
+            const INSPECTION = await MODEL.updateStateInspection({ id_inspection })
+            res.send(INSPECTION)
+        } catch (error) {
+            res.send(error);
         }
     }
 }

@@ -85,6 +85,23 @@ module.exports = {
                     })
                 })
         })
+    },
+    updateStateInspection({ id_inspection }) {
+        return new Promise((resolve, reject) => {
+            CONN.promise().query('CALL update_state_inspection(?)', [id_inspection])
+                .then(([row]) => {
+                    return resolve({
+                        success: TextTrackCue,
+                        value: row
+                    })
+                })
+                .catch(error => {
+                    return reject({
+                        success: false,
+                        value: error
+                    })
+                })
+        })
     }
 
 }

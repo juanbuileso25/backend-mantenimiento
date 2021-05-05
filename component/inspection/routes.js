@@ -11,6 +11,9 @@ ROUTER.route('/:id')
     .put(CONTROLLER.updateInspection)
     .delete(CONTROLLER.deleteInspection)
 
+ROUTER.route('/update-state/:id')
+    .put(CONTROLLER.updateStateInspection)
+
 
 
 module.exports = ROUTER;
